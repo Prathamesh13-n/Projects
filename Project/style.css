@@ -1,0 +1,145 @@
+/* Reset and basic styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f2f4f8;
+    color: #333;
+}
+
+/* Profile container */
+.profile-container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+/* Header */
+header h2 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #555;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+/* Flex container for image + about */
+.profile-flex {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px; /* space between image and text */
+    flex-wrap: wrap; /* for mobile */
+}
+
+/* Profile Image */
+.profile-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%; /* circle */
+    border: 4px solid #2c3e50;
+    object-fit: cover; /* crop image nicely */
+    flex-shrink: 0;
+    animation: rotateIn 1s ease forwards 0.5s;
+}
+
+/* About Section */
+.about {
+    flex: 1; /* take remaining space */
+}
+
+.about h1 {
+    text-align: left;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    animation: bounceIn 1s ease forwards;
+}
+
+.about p {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    text-align: justify;
+    opacity: 0;
+    animation: fadeInText 1s ease forwards;
+}
+
+.about p:nth-child(2) { animation-delay: 0.6s; }
+.about p:nth-child(3) { animation-delay: 0.8s; }
+.about p:nth-child(4) { animation-delay: 1s; }
+
+/* Links */
+a {
+    color: #1e88e5;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #0d47a1;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 700px) {
+    .profile-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about h1 {
+        text-align: center;
+    }
+
+    .about p {
+        text-align: center;
+    }
+}
+
+/* ====================== */
+/* Keyframes for animations */
+/* ====================== */
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    80% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes rotateIn {
+    to {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+    }
+}
+
+@keyframes fadeInText {
+    to {
+        opacity: 1;
+    }
+}
