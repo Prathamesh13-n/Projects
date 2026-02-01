@@ -16,8 +16,10 @@ import wavio as wv
 freq = 44100
 
 # what times wants 
-durations = 10
-
+# durations = 10
+# i am adding user input how much times they have to save voices
+durations = int(input("Enter the time in seconds: "))  
+ 
  # Start recorder with the given values 
 # of duration and sample frequency
 # there rec functions that is the a pre defined as well as a samplerate , channels
